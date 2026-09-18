@@ -13,7 +13,7 @@ rata_rata = berat_total_akhir_kg / len(bagasi)
 kompensasi = 0.05
 biaya_kompensasi = berat_total_akhir_kg * kompensasi
 
-nim = 23
+nim = 22
 bolean = nim < rata_rata
 
 print("bagasi 1 adalah ",bagasi_1)
