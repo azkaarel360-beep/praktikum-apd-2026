@@ -32,9 +32,9 @@ else:
         nama_bbm = "Pertamax Turbo"
         harga_bbm = Pertamax_Turbo
         bensin = True
-    elif bbm >= 4:
-        bensin = False
+    else:
         print("\nPilihan Tidak Tersedia")
+        bensin = False
 
     if bensin == True:
         jumlah_liter = float(input("\nMasukkan jumlah liter yang ingin dibeli: "))
@@ -54,22 +54,22 @@ else:
         else:
             diskon_member = 0
         
-    total_bayar_akhir = total_harga - diskon - diskon_member
+        total_bayar_akhir = total_harga - diskon - diskon_member
 
-    print("\n=================================================")
-    print("                Struk Pembayaran       ")
-    print("=================================================")
-    print("|Nama Pembeli          : ",data_diri)
-    print("------------------------------------------------")
-    print("|Jenis BBM yang dibeli : ",nama_bbm)
-    print("------------------------------------------------")
-    print("|Jumlah Liter          : ",jumlah_liter,"Liter")
-    print("------------------------------------------------")
-    print("|Total Harga           : Rp.",total_harga)
-    print("------------------------------------------------")
-    print("|Diskon                : Rp.",diskon)
-    print("------------------------------------------------")
-    print("|Diskon Member         : Rp.",diskon_member)
-    print("------------------------------------------------")
-    print("|Total Bayar Akhir     : Rp.",total_bayar_akhir)
-    print("================================================")
+        print("\n=================================================")
+        print("                Struk Pembayaran       ")
+        print("=================================================")
+        print("|Data Pembeli          : ",data_diri)
+        print("------------------------------------------------")
+        print("|Jenis BBM yang dibeli : ",nama_bbm)
+        print("------------------------------------------------")
+        print("|Jumlah Liter          : ",jumlah_liter,"Liter")
+        print("------------------------------------------------")
+        print("|Total Harga           : Rp.",total_harga)
+        print("------------------------------------------------")
+        print("|Diskon                : Rp.",diskon)
+        print("------------------------------------------------")
+        print("|Diskon Member         : Rp.",diskon_member)
+        print("------------------------------------------------")
+        print("|Total Bayar Akhir     : Rp.",total_bayar_akhir)
+        print("================================================")
