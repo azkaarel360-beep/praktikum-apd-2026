@@ -9,125 +9,67 @@ if data_diri != nama or nim != NIM:
 else:
     print("Data yang dimasukkan sesuai.\n")
 
-    Pertalite =10000
-    Pertamax =12500    
-    Pertamax_Turbo =15000
-    jenis_bbm = [Pertalite, Pertamax, Pertamax_Turbo]
+    Pertalite =10000.0
+    Pertamax =12500.0
+    Pertamax_Turbo =15000.0
 
     print("-------- Pilihan BBM ---------")
     print("Jenis BBM yang tersedia adalah: ")
-    print("1. Pertalite       : Rp.", jenis_bbm[0])
-    print("2. Pertamax        : Rp.", jenis_bbm[1])
-    print("3. Pertamax Turbo  : Rp.", jenis_bbm[2])
+    print("1. Pertalite       : Rp.", Pertalite)
+    print("2. Pertamax        : Rp.", Pertamax)
+    print("3. Pertamax Turbo  : Rp.", Pertamax_Turbo)
     bbm = int(input("Silahkan pilih jenis BBM Anda sesuai angka yang tertera: "))
 
-# ini pertalite
     if bbm == 1:
         nama_bbm = "Pertalite"
-        jumlah_liter = float(input("Masukkan jumlah liter yang ingin dibeli: "))
-        total_harga = (jenis_bbm[0] * jumlah_liter)
-    # cek diskon
-        if jumlah_liter >= 10:
-            diskon = total_harga * 0.1
-            # print("\nSelamat Anda mendapatkan diskon 10%.")
-        elif jumlah_liter >= 5:
-            diskon = total_harga * 0.05
-            # print("\nSelamat Anda mendapatkan diskon` 5%.")
-        else:
-            diskon = 0
-            # print("\nHarga Normal yaa")
-        total_bayar = total_harga - diskon
-        # print("Total yang harus dibayar adalah Rp.", total_bayar)
-
-# cek diskon member
-        print("\n------------- Cek Diskon Member -------------")
-        status_member = str(input("\nApakah Anda merupakan member SPBU? (ya/tidak): ").lower()) 
-        if status_member == "ya":
-            diskon_member = total_harga * 0.02
-            # print("\nSelamat Anda mendapatkan diskon member 2%.")
-        else:
-            diskon_member = 0
-            # print("\nMaaf Anda tidak mendapatkan diskon member.")
-        total_bayar_akhir = total_bayar - diskon_member
-        # print("Total yang harus dibayar adalah Rp.", total_bayar_akhir)
-
-# ini pertamax
-    if bbm == 2:
+        harga_bbm = Pertalite
+        bensin = True
+    elif bbm == 2:
         nama_bbm = "Pertamax"
-        jumlah_liter = float(input("Masukkan jumlah liter yang ingin dibeli: "))
-        total_harga = (jenis_bbm[1] * jumlah_liter)
-    # cek diskon
-        if jumlah_liter >= 10:
-            diskon = total_harga * 0.1
-            # print("\nSelamat Anda mendapatkan diskon 10%.")
-        elif jumlah_liter >= 5:
-            diskon = total_harga * 0.05
-            # print("\nSelamat Anda mendapatkan diskon 5%.")
-        else:
-            diskon = 0
-            # print("\nHarga Normal yaa")
-        total_bayar = total_harga - diskon
-        # print("Total yang harus dibayar adalah Rp.", total_bayar)
-
-# cek diskon member
-        print("\n------------- Cek Diskon Member -------------")
-        status_member = str(input("\nApakah Anda merupakan member SPBU? (ya/tidak): ").lower()) 
-        if status_member == "ya":
-            diskon_member = total_harga * 0.02
-            # print("\nSelamat Anda mendapatkan diskon member 2%.")
-        else:
-            diskon_member = 0
-            # print("\nMaaf Anda tidak mendapatkan diskon member.")
-        total_bayar_akhir = total_bayar - diskon_member
-        # print("Total yang harus dibayar adalah Rp.", total_bayar_akhir)
-
-# ini pertamax turbo
-    if bbm == 3:
+        harga_bbm = Pertamax
+        bensin = True
+    elif bbm == 3:
         nama_bbm = "Pertamax Turbo"
-        jumlah_liter = float(input("Masukkan jumlah liter yang ingin dibeli: "))
-        total_harga = (jenis_bbm[2] * jumlah_liter)
-    # cek diskon
+        harga_bbm = Pertamax_Turbo
+        bensin = True
+    elif bbm >= 4:
+        bensin = False
+        print("\nPilihan Tidak Tersedia")
+
+    if bensin == True:
+        jumlah_liter = float(input("\nMasukkan jumlah liter yang ingin dibeli: "))
+        total_harga = harga_bbm * jumlah_liter
         if jumlah_liter >= 10:
             diskon = total_harga * 0.1
-            # print("\nSelamat Anda mendapatkan diskon 10%.")
         elif jumlah_liter >= 5:
             diskon = total_harga * 0.05
-            # print("\nSelamat Anda mendapatkan diskon 5%.")
         else:
             diskon = 0
-            # print("\nHarga Normal yaa")
-        total_bayar = total_harga - diskon
 
-# cek diskon member
         print("\n------------- Cek Diskon Member -------------")
-        status_member = str(input("\nApakah Anda merupakan member SPBU? (ya/tidak): ").lower()) 
+        status_member = str(input("\nApakah Anda merupakan member SPBU? (ya/tidak): ").lower())
+
         if status_member == "ya":
             diskon_member = total_harga * 0.02
-            # print("\nSelamat Anda mendapatkan diskon member 2%.")
         else:
             diskon_member = 0
-            # print("\nMaaf Anda tidak mendapatkan diskon member.")
-        total_bayar_akhir = total_bayar - diskon_member
-        # print("Total yang harus dibayar adalah Rp.", total_bayar_akhir)
+        
+    total_bayar_akhir = total_harga - diskon - diskon_member
 
-#OUTPUT 
-print("\n=================================================")
-print("                Struk Pembayaran       ")
-print("=================================================")
-print("|Jenis BBM yang dibeli : ",nama_bbm)
-print("------------------------------------------------")
-print("|Jumlah Liter          : ",jumlah_liter,"Liter")
-print("------------------------------------------------")
-print("|Total Harga           : Rp.",total_harga)
-print("------------------------------------------------")
-print("|Diskon                : Rp.",diskon)
-print("------------------------------------------------")
-print("|Total Bayar           : Rp.",total_bayar)
-print("------------------------------------------------")
-print("|Diskon Member         : Rp.",diskon_member)
-print("------------------------------------------------")
-print("|Total Bayar Akhir     : Rp.",total_bayar_akhir)
-print("================================================")
-
-
-
+    print("\n=================================================")
+    print("                Struk Pembayaran       ")
+    print("=================================================")
+    print("|Nama Pembeli          : ",data_diri)
+    print("------------------------------------------------")
+    print("|Jenis BBM yang dibeli : ",nama_bbm)
+    print("------------------------------------------------")
+    print("|Jumlah Liter          : ",jumlah_liter,"Liter")
+    print("------------------------------------------------")
+    print("|Total Harga           : Rp.",total_harga)
+    print("------------------------------------------------")
+    print("|Diskon                : Rp.",diskon)
+    print("------------------------------------------------")
+    print("|Diskon Member         : Rp.",diskon_member)
+    print("------------------------------------------------")
+    print("|Total Bayar Akhir     : Rp.",total_bayar_akhir)
+    print("================================================")
