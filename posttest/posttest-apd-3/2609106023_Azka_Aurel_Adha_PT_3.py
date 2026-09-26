@@ -50,7 +50,7 @@ else:
         status_member = str(input("\nApakah Anda merupakan member SPBU? (ya/tidak): ").lower())
 
         if status_member == "ya":
-            diskon_member = total_harga * 0.0
+            diskon_member = total_harga * 0.02
         else:
             diskon_member = 0
         
