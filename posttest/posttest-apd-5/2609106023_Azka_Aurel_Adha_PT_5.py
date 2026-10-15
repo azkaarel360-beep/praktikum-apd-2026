@@ -49,13 +49,13 @@ while True:
                         judul = input("\nJudul lagu: ")
                         penyanyi = input("Penyanyi: ")
                         genre = input("Genre: ")
-                        if judul == "":
+                        if judul == "" or penyanyi == "" or genre == "":
                             print("\nInput tidak boleh kosong.")
-                            input("Tekan Enter untuk kembali...")
+                            input("Enter untuk kembali...")
                         else:
                             katalog.append([judul, penyanyi, genre])
                             print("\nLagu berhasil ditambahkan.")
-                            input("Tekan Enter untuk kembali...")
+                            input("Enter untuk kembali...")
 
                     elif menu == "2":
                         print("\n=== KATALOG LAGU ===")
@@ -63,7 +63,7 @@ while True:
                             print("Katalog masih kosong.")
                         for lagu in katalog:
                             print(lagu[0], "-", lagu[1], "-", lagu[2])
-                        input("\nTekan Enter untuk kembali...")
+                        input("\nEnter untuk kembali...")
 
                     elif menu == "3":
                         print("\n=== KATALOG LAGU ===")
@@ -98,7 +98,7 @@ while True:
 
                         if ditemukan == False:
                             print("\nJudul lagu tidak ditemukan.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
                     elif menu == "4":
                         print("\n=== KATALOG LAGU ===")
@@ -122,7 +122,7 @@ while True:
                             print("\nLagu berhasil dihapus dari katalog.")
                         else:
                             print("\nJudul lagu tidak ditemukan.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
                     elif menu == "5":
                         print("\nTerima kasih dan sampai jumpa!.")
@@ -132,7 +132,7 @@ while True:
 
                     else:
                         print("Pilihan tidak tersedia.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
             else:
                 for data_user in playlist:
@@ -166,13 +166,13 @@ while True:
                             input("Tekan Enter untuk kembali...")
                         elif nama_sama == True:
                             print("\nNama playlist itu sudah ada.")
-                            input("Tekan Enter untuk kembali...")
+                            input("Enter untuk kembali...")
                         else:
                             for data_user in playlist:
                                 if data_user[0].lower() == username.lower():
                                     data_user[1].append([nama_playlist, []])
                             print("\nPlaylist berhasil dibuat!")
-                            input("Tekan Enter untuk kembali...")
+                            input("Enter untuk kembali...")
 
                     elif menu == "2":
                         print("\n=== PLAYLIST SAYA ===")
@@ -193,7 +193,7 @@ while True:
 
                         if ada_playlist == False:
                             print("\nKamu belum membuat playlist.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
                     elif menu == "3":
                         print("\n=== PILIH PLAYLIST ===")
@@ -231,7 +231,7 @@ while True:
 
                         if playlist_ditemukan == False:
                             print("\nPlaylist tidak ditemukan.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
                     elif menu == "4":
                         print("\n=== PILIH PLAYLIST ===")
@@ -271,7 +271,7 @@ while True:
 
                         if playlist_ditemukan == False:
                             print("Playlist tidak ditemukan.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
                     elif menu == "5":
                         print("\nTerima kasih dan sampai jumpa!.")
@@ -281,11 +281,11 @@ while True:
 
                     else:
                         print("Pilihan tidak tersedia.")
-                        input("Tekan Enter untuk kembali...")
+                        input("Enter untuk kembali...")
 
         else:
             print("\nUsername atau password salah.")
-            input("Tekan Enter untuk kembali...")
+            input("Enter untuk kembali...")
 
     elif pilihan == "2":
         username_baru = input("\nBuat username: ")
@@ -293,7 +293,7 @@ while True:
 
         if username_baru == "" or password_baru == "":
             print("\nUsername dan password tidak boleh kosong.")
-            input("Tekan Enter untuk kembali...")
+            input("Enter untuk kembali...")
         else:
             sudah_ada = False
             for data in akun:
@@ -301,12 +301,12 @@ while True:
                     sudah_ada = True
             if sudah_ada == True:
                 print("\nUsername sudah digunakan.")
-                input("Tekan Enter untuk kembali...")
+                input("Enter untuk kembali...")
             else:
                 akun.append([username_baru, password_baru])
                 playlist.append([username_baru, []])
                 print("\nRegistrasi berhasil! Silakan login.")
-                input("Tekan Enter untuk kembali...")
+                input("Enter untuk kembali...")
 
     elif pilihan == "3":
         print("\nTerima kasih dan sampai jumpa!")
@@ -316,4 +316,4 @@ while True:
 
     else:
         print("\nPilihan tidak tersedia.")
-        input("Tekan Enter untuk kembali...")
+        input("Enter untuk kembali...")
