@@ -323,6 +323,8 @@ while True:
             for nama_akun in akun:
                 if nama_akun.lower() == username_baru.lower():
                     sudah_ada = True
+                    break
+
             if sudah_ada == True:
                 print("\nUsername sudah digunakan.")
                 input("Enter untuk kembali...")
