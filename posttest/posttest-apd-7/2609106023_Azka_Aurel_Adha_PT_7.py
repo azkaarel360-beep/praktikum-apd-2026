@@ -306,6 +306,6 @@ while True:
         input("Enter untuk kembali...")
 
     elif pilihan == "3":
-        print("\nTerima kasih dan sampai jumpa!")
+        print("\nTerima kasih dan sampai jump!")
         time.sleep(3)
         break
